@@ -1,5 +1,5 @@
 /*
- * Description: Using Firefox search stock symbol (text field
+ * Description: Using Firefox search stock symbol (text field)
  * by country (dropdown) and type (dropdown).
  * Author:  gsr732 (GA Sauer)
  * Date:  March 6, 2016
