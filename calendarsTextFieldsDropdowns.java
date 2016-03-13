@@ -18,40 +18,48 @@ import java.util.Set;
 import org.openqa.selenium.By;
 
 public class calendarsTextFieldsDropdowns {
-
-	public static void main(String[] args) throws Exception {
-
-		setUp();
-		textFieldsDropDowns();
-
-	}
-
+	
 	public static WebDriver driver;
 	public static String baseUrl;
 	public static String fromCity;
 	public static String toCity;
 
-	// Setup Firefox driver and URL
+
+	public static void main(String[] args) throws Exception {
+
+		setUp();
+		testData();
+		textFieldsDropDowns();
+
+	}
+
+
+	// Setup Firefox driver
 	public static void setUp() throws Exception {
 
-		
+	//Set FireFox as driver	
 	driver = new FirefoxDriver();
-	baseUrl = "https://www.expedia.com/";
 		
 	// Maximize the browser's window
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	
-	// Open up URL in baseURL variable
-	driver.get(baseUrl);
-	
+
 	}	
 	
+	public static void testData() 
+	{
+		baseUrl = "https://www.expedia.com/";
+		fromCity = "New York, NY, United States (NYC-All Airports)";
+		toCity = "Chicago (and vicinity), Illinois, United States of America";
+		
+	}
 
 	public static void textFieldsDropDowns() throws Exception {
-
-	fromCity = "New York, NY, United States (NYC-All Airports)";
-	toCity = "Chicago (and vicinity), Illinois, United States of America";
+	
+		// Open up URL in baseURL variable
+		driver.get(baseUrl);
+		
 	
 	// Enter Flying from and Flying to text fields
 	driver.findElement(By.id("package-origin")).sendKeys(fromCity);
@@ -89,7 +97,3 @@ public class calendarsTextFieldsDropdowns {
 	}
 }
 		
-	
-
-
-
